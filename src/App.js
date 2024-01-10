@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/index.scss";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Title from "./components/Title";
 import FormProduct from "./components/FormProduct";
 
