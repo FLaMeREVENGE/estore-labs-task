@@ -6,8 +6,14 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGrip,
+  faTimes,
+  faFileImport,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import CreatableSelect from "react-select/creatable";
+import { components } from "react-select";
 import keywordOptions from "../utils/keywords";
 
 const schema = object({
@@ -81,13 +87,15 @@ const FormProduct = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} className="form">
       <Form.Group>
         <Form.Label className="label">Title:</Form.Label>
         <Controller
           name="title"
           control={control}
-          render={({ field }) => <Form.Control {...field} type="text" />}
+          render={({ field }) => (
+            <Form.Control className="input" {...field} type="text" />
+          )}
         />
         {errors.title && <p className="error-text label">Title is required</p>}
       </Form.Group>
@@ -127,7 +135,7 @@ const FormProduct = () => {
                             className="drag-handle"
                             {...provided.dragHandleProps}
                           >
-                            <FontAwesomeIcon icon={faBars} />
+                            <FontAwesomeIcon icon={faGrip} className="bars" />
                           </div>
                           <Controller
                             name={`points[${index}]`}
@@ -137,7 +145,7 @@ const FormProduct = () => {
                               <Form.Control
                                 {...field}
                                 type="text"
-                                className="mr-2"
+                                className="input"
                                 onChange={(e) => {
                                   field.onChange(e);
                                   const updatedPoints = [...points.list];
@@ -152,10 +160,10 @@ const FormProduct = () => {
                             )}
                           />
                           <Button
-                            variant="danger"
                             onClick={() => handleRemovePoint(index)}
+                            className="remove"
                           >
-                            Remove
+                            <FontAwesomeIcon icon={faTimes} />
                           </Button>
                         </div>
                       </div>
@@ -167,16 +175,17 @@ const FormProduct = () => {
             </Droppable>
           ))}
         </DragDropContext>
-        <div className="mt-2">
+        <div className="mt-2 d-flex">
+          <Button variant="primary" onClick={handleAddPoint} className="add">
+            <FontAwesomeIcon icon={faPlus} className="add__icon" />
+          </Button>
           <Form.Control
+            className="input"
             type="text"
             value={newPoint}
             onChange={(e) => setNewPoint(e.target.value)}
             placeholder="New point..."
           />
-          <Button variant="primary" className="mt-2" onClick={handleAddPoint}>
-            Add Point
-          </Button>
         </div>
       </Form.Group>
       <Form.Group>
@@ -190,12 +199,28 @@ const FormProduct = () => {
               isMulti
               onChange={(value) => field.onChange(value)}
               options={keywordOptions}
+              styles={{
+                control: (provided) => ({
+                  ...provided,
+                  backgroundColor: "transparent",
+                }),
+                menu: (provided) => ({
+                  ...provided,
+                  backgroundColor: "black",
+                }),
+                option: (provided, state) => ({
+                  ...provided,
+                  backgroundColor: state.isFocused
+                    ? "rgba(255, 255, 255, 0.3)"
+                    : "transparent",
+                }),
+              }}
             />
           )}
         />
       </Form.Group>
-      <Button className="w-100 mt-3" type="submit">
-        Send
+      <Button className="w-100 mt-5 send" type="submit">
+        <FontAwesomeIcon icon={faFileImport} className="send__icon" /> Send
       </Button>
     </Form>
   );

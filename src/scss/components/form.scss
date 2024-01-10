@@ -1,0 +1,87 @@
+@use '../global/variables' as *;
+
+.form {
+    padding-right: 5%;
+    color: white;
+    width: 80%;
+
+    @media(max-width: 800px){
+        padding-right: 0%;
+    }
+
+
+    .label {
+        font-family: 'Exo', sans-serif;
+        margin-top: 30px;
+    }
+
+    .input {
+        background: transparent;
+        width: 100%;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .white-background-quill {
+        background: transparent;
+    }
+
+    .bars{
+        margin-right: 10px;
+        height: 30px;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    .add{
+        background: rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        margin-right: 10px;
+        height: 100%;
+
+        &:hover{
+            background: rgba(255, 255, 255, 0.756);
+            color: black;
+        }
+    }
+
+
+    .remove{
+        background: rgba(255, 0, 0, 0.25);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        margin-left: 10px;
+        height: 100%;
+
+        &:hover{
+            background: rgba(255, 0, 0, 0.752);
+            color: black;
+        }
+    }
+
+    .send {
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+
+        &:hover{
+            background: rgba(255, 255, 255, 0.756);
+            color: black;
+        }
+
+        &__icon{
+            margin-right: 5px;
+        }
+    }
+}
