@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <div className="context">
-        <Title onAddProductClick={handleAddProductClick} />
+      <Title onAddProductClick={handleAddProductClick} showForm={showForm} />
         {showForm && <FormProduct />}
       </div>
       <div className="background">
