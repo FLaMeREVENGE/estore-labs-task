@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./scss/index.scss";
 import Title from "./components/Title";
 import FormProduct from "./components/FormProduct";
-import { Container } from "react-bootstrap";
 
 const App = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleAddProductClick = () => {
+    setShowForm(true);
+  };
+
   return (
     <>
       <div className="context">
-        <Title />
-        <FormProduct />
+        <Title onAddProductClick={handleAddProductClick} />
+        {showForm && <FormProduct />}
       </div>
       <div className="background">
         <ul className="circles">

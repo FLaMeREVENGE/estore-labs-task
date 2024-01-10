@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { z, object, string } from "zod";
@@ -13,7 +13,6 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import CreatableSelect from "react-select/creatable";
-import { components } from "react-select";
 import keywordOptions from "../utils/keywords";
 
 const schema = object({
@@ -184,7 +183,6 @@ const FormProduct = () => {
             type="text"
             value={newPoint}
             onChange={(e) => setNewPoint(e.target.value)}
-            placeholder="New point..."
           />
         </div>
       </Form.Group>
