@@ -1,3 +1,22 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ONRAMP";
+  src: url("../fonts/ONRAMP.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 * {
   background: radial-gradient(circle, rgb(172, 46, 0) 0%, rgb(0, 0, 0) 100%);
+}
+
+.title {
+  color: white;
+  font-family: "ONRAMP";
 }/*# sourceMappingURL=index.css.map */

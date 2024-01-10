@@ -1,5 +1,15 @@
-@use '../global/colors' as *;
+@use '../global/variables' as *;
 
-* {
+body {
     background: $background;
+}
+
+.title {
+    color: white;
+    font-family: $font-title;
+}
+
+.label{
+    font-family: $font-text;
+    color: white;
 }
