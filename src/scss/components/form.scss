@@ -4,6 +4,7 @@
     padding-right: 5%;
     color: white;
     width: 80%;
+    max-width: 800px;
 
     @media(max-width: 800px){
         padding-right: 0%;
@@ -37,53 +38,53 @@
         margin-right: 10px;
         height: 30px;
         margin-top: 4px;
-        color: rgba(255, 255, 255, 0.3);
+        color: $white-light;
     }
 
     .add{
-        background: rgba(0, 0, 0, 0.25);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        background: $black-light;
+        box-shadow: 0 4px 30px $shadow;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid $white-light;
         color: white;
         margin-right: 10px;
         height: 100%;
 
         &:hover{
-            background: rgba(255, 255, 255, 0.756);
+            background: $white-active;
             color: black;
         }
     }
 
 
     .remove{
-        background: rgba(255, 0, 0, 0.25);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        background: $red-light;
+        box-shadow: 0 4px 30px $shadow;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid $white-light;
         color: white;
         margin-left: 10px;
         height: 100%;
 
         &:hover{
-            background: rgba(255, 0, 0, 0.752);
+            background: $red-active;
             color: black;
         }
     }
 
     .send {
-        background: rgba(255, 255, 255, 0.25);
+        background: $white-light;
         border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px $shadow;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid $white-light;
         color: white;
 
         &:hover{
-            background: rgba(255, 255, 255, 0.756);
+            background: $white-active;
             color: black;
         }
 
@@ -93,12 +94,12 @@
     }
 
     .send__success {
-        background: rgba(0, 255, 30, 0.25);
+        background: $green-light;
         border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 30px $shadow;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid $white-light;
         color: white;
 
         &__icon{

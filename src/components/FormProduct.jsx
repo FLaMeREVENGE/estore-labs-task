@@ -28,7 +28,7 @@ const defaultValues = {
 };
 
 const FormProduct = () => {
-    const [hasTitleError, setHasTitleError] = useState(false);
+  const [hasTitleError, setHasTitleError] = useState(false);
 
   const {
     handleSubmit,
@@ -95,19 +95,23 @@ const FormProduct = () => {
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="form">
       <Form.Group>
-  {hasTitleError ? (
-    <Form.Label className="label__error">Title is required</Form.Label>
-  ) : (
-    <Form.Label className="label">Title:</Form.Label>
-  )}
-  <Controller
-    name="title"
-    control={control}
-    render={({ field }) => (
-      <Form.Control className={`input ${hasTitleError ? 'has-error' : ''}`} {...field} type="text" />
-    )}
-  />
-</Form.Group>
+        {hasTitleError ? (
+          <Form.Label className="label__error">Title is required</Form.Label>
+        ) : (
+          <Form.Label className="label">Title:</Form.Label>
+        )}
+        <Controller
+          name="title"
+          control={control}
+          render={({ field }) => (
+            <Form.Control
+              className={`input ${hasTitleError ? "has-error" : ""}`}
+              {...field}
+              type="text"
+            />
+          )}
+        />
+      </Form.Group>
       <Form.Group>
         <Form.Label className="label">Description:</Form.Label>
         <Controller
@@ -232,7 +236,7 @@ const FormProduct = () => {
         type="submit"
       >
         {submitSuccess ? (
-          <FontAwesomeIcon icon={faCheck} className="send__icon"/>
+          <FontAwesomeIcon icon={faCheck} className="send__icon" />
         ) : (
           <FontAwesomeIcon icon={faFileImport} className="send__icon" />
         )}{" "}

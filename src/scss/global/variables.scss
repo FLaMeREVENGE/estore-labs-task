@@ -1,4 +1,10 @@
-$background: radial-gradient(circle, rgba(79,21,0,1) 0%, rgba(0,0,0,1) 100%);
+$white-light: rgba(255, 255, 255, 0.25);
+$white-active: rgba(255, 255, 255, 0.756);
+$green-light: rgba(0, 255, 30, 0.25);
+$red-light: rgba(255, 0, 0, 0.25);
+$red-active: rgba(255, 0, 0, 0.752);
+$black-light: rgba(0, 0, 0, 0.25);
+$shadow: rgba(0, 0, 0, 0.1);
 
 $font-title: 'ONRAMP';
-$font-text: 'Roboto';
+$font-text: 'Exo', sans-serif;

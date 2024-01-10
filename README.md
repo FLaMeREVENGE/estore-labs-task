@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# ESTORE LABS Recruitment Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository presents a recruitment task assigned by Estore Labs.
 
-## Available Scripts
+![Alt Text](./public/screen.png)
 
-In the project directory, you can run:
+## Task Description
 
-### `npm start`
+The application includes a simple form for users to fill out the following information:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Title (using zod)
+- Description (using quill)
+- Bullets (using dnd)
+- Keywords (using select)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+All data, when correctly filled out, should be displayed in the console.
 
-### `npm test`
+## Running the Application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the application, follow these steps:
 
-### `npm run build`
+1. Open the terminal and navigate to the main directory of the repository.
+2. Run the `npm install` command to install the necessary Node.js packages.
+3. After successful package installation, start the application by running the `npm start` command.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application utilizes the following technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [react-hook-form](https://react-hook-form.com/)
+- [react-select](https://react-select.com/)
+- [react-bootstrap](https://react-bootstrap.github.io/)
+- [zod](https://github.com/colinhacks/zod)
+- [quill](https://quilljs.com/)
+- [dnd (react-beautiful-dnd)](https://github.com/atlassian/react-beautiful-dnd)
+- [Sass](https://sass-lang.com/)
 
-### `npm run eject`
+## Contact
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you have any questions or need additional information, please feel free to reach out to me:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: karol.komorowski@yahoo.com
+- Phone: 796-331-543
