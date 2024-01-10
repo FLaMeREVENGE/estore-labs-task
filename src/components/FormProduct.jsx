@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
-import { object, string } from "zod";
+import { z, object, string } from "zod";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const schema = object({
   title: string().min(1).max(100),
@@ -58,7 +60,13 @@ const FormProduct = () => {
         <Controller
           name="description"
           control={control}
-          render={({ field }) => <Form.Control {...field} as="textarea" />}
+          render={({ field }) => (
+            <ReactQuill
+              {...field}
+              theme="snow" 
+              className="white-background-quill"
+            />
+          )}
         />
       </Form.Group>
       <Form.Group>
