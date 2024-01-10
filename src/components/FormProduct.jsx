@@ -7,6 +7,7 @@ import "react-quill/dist/quill.snow.css";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCheck,
   faGrip,
   faTimes,
   faFileImport,
@@ -27,6 +28,8 @@ const defaultValues = {
 };
 
 const FormProduct = () => {
+    const [hasTitleError, setHasTitleError] = useState(false);
+
   const {
     handleSubmit,
     control,
@@ -38,11 +41,13 @@ const FormProduct = () => {
     resolver: (data) => {
       try {
         schema.parse(data);
+        setHasTitleError(false);
         return {
           values: data,
           errors: {},
         };
       } catch (err) {
+        setHasTitleError(true);
         return {
           values: {},
           errors: err.formErrors.fieldErrors,
@@ -53,6 +58,7 @@ const FormProduct = () => {
 
   const [newPoint, setNewPoint] = useState("");
   const [points, setPoints] = useState({ list: [], counter: 0 });
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const onDragEnd = (result) => {
     if (!result.destination) return;
@@ -83,21 +89,25 @@ const FormProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    setSubmitSuccess(true);
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="form">
       <Form.Group>
-        <Form.Label className="label">Title:</Form.Label>
-        <Controller
-          name="title"
-          control={control}
-          render={({ field }) => (
-            <Form.Control className="input" {...field} type="text" />
-          )}
-        />
-        {errors.title && <p className="error-text label">Title is required</p>}
-      </Form.Group>
+  {hasTitleError ? (
+    <Form.Label className="label__error">Title is required</Form.Label>
+  ) : (
+    <Form.Label className="label">Title:</Form.Label>
+  )}
+  <Controller
+    name="title"
+    control={control}
+    render={({ field }) => (
+      <Form.Control className={`input ${hasTitleError ? 'has-error' : ''}`} {...field} type="text" />
+    )}
+  />
+</Form.Group>
       <Form.Group>
         <Form.Label className="label">Description:</Form.Label>
         <Controller
@@ -217,8 +227,16 @@ const FormProduct = () => {
           )}
         />
       </Form.Group>
-      <Button className="w-100 mt-5 send" type="submit">
-        <FontAwesomeIcon icon={faFileImport} className="send__icon" /> Send
+      <Button
+        className={`w-100 mt-5 ${submitSuccess ? "send__success" : "send"}`}
+        type="submit"
+      >
+        {submitSuccess ? (
+          <FontAwesomeIcon icon={faCheck} className="send__icon"/>
+        ) : (
+          <FontAwesomeIcon icon={faFileImport} className="send__icon" />
+        )}{" "}
+        {submitSuccess ? "Success" : "Send"}
       </Button>
     </Form>
   );
